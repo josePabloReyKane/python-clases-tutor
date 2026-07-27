@@ -35,3 +35,17 @@ def test_es_cuenta_premin_error_2():
     with pytest.raises(ValueError):
         finanzas.es_cuenta_premin(20000,-15)
 
+def test_calcular_balance_neto():
+    lista=[15456,-48597,987456]
+    assert finanzas.calcular_balance_neto(lista)==954315
+    assert finanzas.calcular_balance_neto([])==0
+
+
+def test_filtrar_compras_mayoter_a():
+    lista1=[500,-120,-30,-250]
+    assert finanzas.filtrar_compras_mayoter_a(lista1,100)==[-120,-250]
+
+def test_filtrar_compras_mayoter_a_error1():
+    lista1=[500,-120,-30,-250]
+    with pytest.raises(ValueError):
+        finanzas.filtrar_compras_mayoter_a(lista1,-100)

@@ -20,7 +20,7 @@ def calcular_interes_conpuesto(capital,tasa,periodo):
     if tasa<0:
         raise ValueError
     
-    return periodo*(1+tasa)**periodo
+    return capital*(1+tasa)**periodo
 
 def es_cuenta_premin(saldo,antiguedad_meses):
     if saldo<0 or antiguedad_meses<24:
@@ -30,9 +30,23 @@ def es_cuenta_premin(saldo,antiguedad_meses):
 
 
 def calcular_balance_neto(transacciones):
-    pass
+    if len(transacciones)==0:
+        return 0
+
+    return sum(transacciones)
+    
 
 
 
-def filtrar():
-    pass
+def filtrar_compras_mayoter_a(trasacciones,umbral):
+    if umbral<0:
+        raise ValueError
+    
+    resultado=[]
+    
+    for trasaccione in trasacciones:
+        if abs(trasaccione)>umbral and trasaccione<0:
+            resultado.append(trasaccione)
+
+    return resultado
+            
