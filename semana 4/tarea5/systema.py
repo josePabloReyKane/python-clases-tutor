@@ -1,5 +1,5 @@
 import sys
-
+"""
 # Mostrar version de Python
 print(f"Python version: {sys.version}")
 
@@ -14,3 +14,4 @@ print(f"Modo: {modo}")
 if error_critico:
     print("Error critico detectado")
     sys.exit(1)
+    """
