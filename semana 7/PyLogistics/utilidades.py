@@ -6,7 +6,7 @@ from modelos import Vehiculo, Camion
 
 import random 
 
-
+lista_camion=[Camion]
 estados_entrega = ("EN_ALMACEN", "EN_TRANSITO", "ENTREGADO")
 
 def inspeccion_seguridad(id_vehiculo: str) -> bool:
@@ -36,8 +36,33 @@ def inspeccion_seguridad(id_vehiculo: str) -> bool:
     else:
         return True
 
+def ingresar_camion():
+
+    valor1=input("Esciba la Placa del Camion")
+    valor2=float(input("Cual es la carga maxima del camion"))
+
+    for i in lista_camion:
+        if valor1==lista_camion._id_vehiculo:
+            print(f"el camion {valor1} ya exite")
+
+        else:
+            lista_camion=[valor1,0,valor2]
+
+
+    
+
+
+def ingresar_peso():
+    id_camino=input("Cual camino desea ingresar le peso")
+
+    for i in lista_camion._id_vehiculo:
+
+        if i==lista_camion._id_vehiculo:
+            peso=input("cuanto peso desea ingresar al camion")
+            Camion.agregar_carga(peso)
 
 def calcular_promedio_peso_paquetes(flota: dict) -> float:
+
     """ 
     flota = {
         "1": Camion(),
@@ -45,6 +70,13 @@ def calcular_promedio_peso_paquetes(flota: dict) -> float:
         "3": Camion()
     }
 
+    """
+    peso=0
+
+    for i in range :
+
+        return peso
+    """
     # Esto accede a la lista de paquetes
     print(flota["1"].lista_paquetes)
 
